@@ -13,7 +13,7 @@ class Server():
         self.host = host
         self._udp = udp
         self._config = dict(server_port=port, password=password, method=method,
-                            server=host, auth=ota, timeout=timeout,
+                            server=host, timeout=timeout,
                             fast_open=fast_open, plugin=plugin , plugin_opts=plugin_opts)
 
     def __eq__(self, other):
