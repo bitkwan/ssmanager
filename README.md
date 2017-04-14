@@ -19,7 +19,7 @@ Python port.
 ## Install
 
 ```
-$ pip install git+https://github.com/sorz/ssmanager.git
+$ pip install git+https://github.com/bitkwan/ssmanager.git
 ```
 
 ## Usage
