@@ -12,7 +12,7 @@ class Server():
         self.port = port
         self.host = host
         self._udp = udp
-        if(plugin && plugin_opts):
+        if(plugin!="0" and plugin_opts!="0"):
             self._config = dict(server_port=port, password=password, method=method,
                                 server=host, timeout=timeout,
                                 fast_open=fast_open, plugin=plugin , plugin_opts=plugin_opts)
