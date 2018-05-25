@@ -5,20 +5,21 @@ import time
 class Server():
     """Store configuration about one server instance."""
 
-    def __init__(self, port, password, method, host='0.0.0.0', timeout=180,
+    def __init__(self, port, password, method, host='0.0.0.0', host_v6='[::0]', timeout=180,
                  udp=True, ota=False, fast_open=True, plugin=False, plugin_opts=False):
         self._traffic = 0
         self._is_running = False
         self.port = port
         self.host = host
+        self.host_v6 = host_v6
         self._udp = udp
         if(plugin!="0" and plugin_opts!="0"):
             self._config = dict(server_port=port, password=password, method=method,
-                                server=host, timeout=timeout,
+                                server=[host_v6, host], timeout=timeout,
                                 fast_open=fast_open, plugin=plugin , plugin_opts=plugin_opts)
         else:
             self._config = dict(server_port=port, password=password, method=method,
-                                server=host, timeout=timeout,
+                                server=[host_v6, host], timeout=timeout,
                                 fast_open=fast_open)
 
     def __eq__(self, other):
